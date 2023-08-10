@@ -15,7 +15,9 @@ import {
 import LockIcon from "@mui/icons-material/Lock";
 import { User } from "../../types";
 
-const SignUp: React.FC<{ onSubmit: Function }> = ({ onSubmit }) => {
+const SignUp: React.FC<{ onSubmit: (userData: User) => void }> = ({
+  onSubmit,
+}) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [username, setUsername] = useState("");
@@ -62,7 +64,11 @@ const SignUp: React.FC<{ onSubmit: Function }> = ({ onSubmit }) => {
       )}
       <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-8">
         <div className="">
-          <img src={Bookshelf} alt="bookshelf" className="h-auto max-w-full object-contain" />
+          <img
+            src={Bookshelf}
+            alt="bookshelf"
+            className="h-auto max-w-full object-contain"
+          />
         </div>
         <div className="text-center">
           <Typography variant="h4">Sign Up</Typography>
@@ -102,7 +108,9 @@ const SignUp: React.FC<{ onSubmit: Function }> = ({ onSubmit }) => {
                 required={true}
                 endAdornment={
                   <InputAdornment position="end">
-                    <LockIcon onClick={() => setIsPasswordShown(!isPasswordShown)} />
+                    <LockIcon
+                      onClick={() => setIsPasswordShown(!isPasswordShown)}
+                    />
                   </InputAdornment>
                 }
               />
