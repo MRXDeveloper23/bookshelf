@@ -60,7 +60,6 @@ export default class ApiService {
   static async checkLogin() {
     try {
       const res = await request.get("/myself");
-      console.log(res);
       return res.data.isOk;
     } catch (error) {
       catchError(error);
