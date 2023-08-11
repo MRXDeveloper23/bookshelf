@@ -1,4 +1,4 @@
-import md5 from "md5-hash";
+import md5 from "md5";
 
 export const generateMD5 = (
   method: string | undefined,
